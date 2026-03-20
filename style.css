@@ -1,0 +1,144 @@
+body {
+    background: #0f172a;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Graph එක ලොකුවට පේන්න */
+}
+
+.calculator-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Calculator Styles */
+.calculator {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 24px;
+    width: 360px;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    background: rgba(15, 23, 42, 0.5);
+    border: none;
+    border-radius: 12px;
+    color: #38bdf8;
+    font-size: 32px;
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #334155;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover { background: #475569; }
+
+.operator { background: #1e293b; color: #38bdf8; font-weight: bold; }
+.sci-btn { background: #1e293b; color: #c084fc; }
+.equal-btn { grid-column: span 2; background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a; font-weight: bold; }
+
+/* Converter Styles */
+.converter {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 24px;
+    width: 320px;
+}
+
+.converter h3 { text-align: center; color: #38bdf8; margin-top: 0; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; font-size: 14px; color: #94a3b8; }
+.input-group input {
+    width: 100%;
+    height: 45px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #f8fafc;
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.clear-converter { width: 100%; height: 45px; background: #ef4444; color: white; margin-top: 10px; }
+
+/* Graph Styles (Aluth Kotasa) */
+.graph-container {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 24px;
+    width: 100%;
+}
+
+.graph-container h3 { text-align: center; color: #38bdf8; margin-top: 0; }
+
+.graph-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.graph-controls input {
+    height: 45px;
+    flex-grow: 1;
+    max-width: 400px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #f8fafc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.graph-controls button {
+    height: 45px;
+    background: #818cf8;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 400px; /* Graph එකේ උස */
+}

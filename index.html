@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Calculator with Graphs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="calculator-wrapper">
+            <div class="calculator">
+                <input type="text" id="display" placeholder="0" disabled>
+                <div class="buttons">
+                    <button class="sci-btn" onclick="sciFunc('sin')">sin</button>
+                    <button class="sci-btn" onclick="sciFunc('cos')">cos</button>
+                    <button class="sci-btn" onclick="sciFunc('tan')">tan</button>
+                    <button class="sci-btn" onclick="sciFunc('log')">log</button>
+                    <button class="sci-btn" onclick="sciFunc('pow')">x²</button>
+                    <button class="sci-btn" onclick="sciFunc('sqrt')">√</button>
+                    <button class="sci-btn" onclick="appendToDisplay('π')">π</button>
+                    <button class="sci-btn" onclick="sciFunc('exp')">exp</button>
+                    <button class="operator" onclick="clearDisplay()">AC</button>
+                    <button class="operator" onclick="deleteLast()">DEL</button>
+                    <button class="operator" onclick="appendToDisplay('%')">%</button>
+                    <button class="operator" onclick="appendToDisplay('/')">÷</button>
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button class="operator" onclick="appendToDisplay('*')">×</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button class="operator" onclick="appendToDisplay('-')">-</button>
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button class="operator" onclick="appendToDisplay('+')">+</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button onclick="appendToDisplay('.')">.</button>
+                    <button id="equal" class="equal-btn" onclick="calculate()">=</button>
+                </div>
+            </div>
+
+            <div class="converter">
+                <h3>Number Converter</h3>
+                <div class="input-group">
+                    <label>Decimal (10):</label>
+                    <input type="number" id="decimalInput" placeholder="Ex: 255" oninput="convertFromDecimal()">
+                </div>
+                <div class="input-group">
+                    <label>Binary (2):</label>
+                    <input type="text" id="binaryInput" placeholder="Ex: 11111111" oninput="convertFromBinary()">
+                </div>
+                <div class="input-group">
+                    <label>Hexadecimal (16):</label>
+                    <input type="text" id="hexInput" placeholder="Ex: FF" oninput="convertFromHex()">
+                </div>
+                <button class="clear-converter" onclick="clearConverter()">Clear All</button>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <h3>Graph Plotter</h3>
+            <div class="graph-controls">
+                <input type="text" id="equationInput" placeholder="Equation (Ex: Math.sin(x))">
+                <button onclick="plotGraph()">Plot Graph</button>
+            </div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
